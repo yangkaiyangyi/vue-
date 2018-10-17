@@ -2,11 +2,13 @@
   <div>
     <hsearch/>
     <lunbo/>
+    <conbar/>
   </div>
 </template>
 
 <script>
  import hsearch from '../components/header/hsearch.vue'
+ import conbar from '../components/contain/conbar.vue'
  import lunbo from '../components/banner/lunbo1.vue'
 export default {
   data () {
@@ -16,7 +18,8 @@ export default {
   },
   components:{
     hsearch,
-    lunbo
+    lunbo,
+    conbar
   }
 }
 </script>
