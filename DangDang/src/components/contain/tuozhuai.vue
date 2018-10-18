@@ -1,16 +1,17 @@
 <template>
   <div class="tzz">
+      
      <ul class="tz">
          <li v-for='(img,index) in arr' :key='index'>
            <a href="#"> <img :src="img" alt="" srcset=""></a> 
            <div class="content">
-               <p>深度成长：颠覆思维模式，重新定义成功</p>
+               <p style="font-size:2px"> 深度成长：颠覆思维模式，重新定义成功</p>
                <p class="price"> $1</p>
                <p class="oldprice"> <del> $100 </del></p>
              </div>
          </li>
      </ul>
-  <!-- <div class="kb"> </div> -->
+  
   </div>
 </template>
 
@@ -39,16 +40,21 @@ export default {
 <style scoped>
 .tzz{
        width: 100%;
-    height: 260px;
+    height: 300px;
     overflow: hidden;
+}
+.kb{
+  width: 100%;
+  height: 20px;
+  background: rgba(208, 240, 219, 0.445);
 }
 .tz{
     width: 800px;
-    height: 260px;
+    height: 280px;
     overflow: hidden;
     padding-top:20px; 
     white-space: nowrap; 
-overflow-x: scroll;
+overflow-x: auto;
     /* white-space: nowrap;overflow-x:scroll;overflow-y:hidden; */
      /* transform: translate(-649px, 0px) translateZ(0px); */
 }
@@ -75,6 +81,8 @@ display: none;
 }
 .content p{
     text-align: center;
+    /* font-size: 5px; */
+    overflow: hidden;
 }
 .price{color: red;}
 .oldprice{

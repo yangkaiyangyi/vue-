@@ -18,7 +18,9 @@
           <a href="#" class="miaox"> <img src="../../assets/contentimg/maox.jpg" alt="" srcset=""></a>
       </div>
       <daojishi/>
+      
       <tuozhuai/>
+      <gotop/>
       <ccontent/>
     
   </div>
@@ -29,11 +31,13 @@
 import daojishi from './daojishi.vue';
 import tuozhuai from './tuozhuai.vue';
 import ccontent from './ccontent.vue';
+import gotop from './gotop.vue';
  export default {
     components:{
       daojishi,
         tuozhuai,
-        ccontent
+        ccontent,
+        gotop
     },
   data() {
     return {
