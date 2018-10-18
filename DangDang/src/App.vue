@@ -31,6 +31,12 @@ html,body{
    /* display: flex; */
   
 }
+a{
+  text-decoration: none;
+}
+ul li{
+  list-style: none;
+}
 /*.app1{
   flex: 10%;
 }

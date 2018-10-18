@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="tzz">
      <ul class="tz">
          <li v-for='(img,index) in arr' :key='index'>
            <a href="#"> <img :src="img" alt="" srcset=""></a> 
@@ -10,7 +10,7 @@
              </div>
          </li>
      </ul>
-
+  <!-- <div class="kb"> </div> -->
   </div>
 </template>
 
@@ -37,11 +37,25 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.tzz{
+       width: 100%;
+    height: 260px;
+    overflow: hidden;
+}
 .tz{
-    width: 100%;
+    width: 800px;
     height: 260px;
     overflow: hidden;
     padding-top:20px; 
+    white-space: nowrap; 
+overflow-x: scroll;
+    /* white-space: nowrap;overflow-x:scroll;overflow-y:hidden; */
+     /* transform: translate(-649px, 0px) translateZ(0px); */
+}
+.tz::-webkit-scrollbar{   
+width: 0;
+height: 0;
+display: none;
 }
 .tz li{
     float: left;
@@ -69,4 +83,5 @@ export default {
 img{
     width: 100%;
 }
+
 </style>

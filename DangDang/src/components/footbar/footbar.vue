@@ -35,7 +35,7 @@ export default {
   width: 100%;
   position: fixed;
   bottom: 0;
-  /* left:0; */
+  background: #fff;
   z-index: 101;
   opacity: 66;
   padding: 10px 0;

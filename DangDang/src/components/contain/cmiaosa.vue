@@ -19,9 +19,8 @@
       </div>
       <daojishi/>
       <tuozhuai/>
-      <div> 9999</div>
-      <div> 9999</div>
-      <div> 9999</div>
+      <ccontent/>
+    
   </div>
 </template>
 
@@ -29,10 +28,12 @@
 
 import daojishi from './daojishi.vue';
 import tuozhuai from './tuozhuai.vue';
+import ccontent from './ccontent.vue';
  export default {
     components:{
       daojishi,
-        tuozhuai
+        tuozhuai,
+        ccontent
     },
   data() {
     return {
