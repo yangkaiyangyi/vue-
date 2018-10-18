@@ -7,7 +7,7 @@ import router from './router'
 // 移动自适应
 import 'lib-flexible'
 // 引入阿里巴巴字体图标
-import "@/assets/iconfont/iconfont.js"
+import '@/assets/iconfont/iconfont.js'
 
 import IconSvg from '@/components/icon-svg'
 // 全局注册icon-svg

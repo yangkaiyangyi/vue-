@@ -1,9 +1,12 @@
 <template>
+
+
+
   <div class="footer">
     
   <a href="#" v-for ='( img, index) in imgArr' :key="index"> <img :src="img" alt="" srcset=""> </a> 
-
-  </div>
+</div>
+  
 </template>
 
 <script>
@@ -27,11 +30,12 @@ export default {
 <style scoped>
 
 .footer {
+  /* flex: 10%; */
   display:flex;
   width: 100%;
   position: fixed;
   bottom: 0;
-  left:0;
+  /* left:0; */
   z-index: 101;
   opacity: 66;
   padding: 10px 0;

@@ -2,7 +2,7 @@
   <div id="app"> 
 
     <router-view/>
-    <footbar/>
+   <footbar/>
   </div>
 </template>
 
@@ -21,5 +21,23 @@ export default {
 *{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
+html,body{
+  height: 100%;
+}
+ #app{
+   height: 100%;
+   /* display: flex; */
+  
+}
+/*.app1{
+  flex: 10%;
+}
+.app2{
+  flex: 90%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+} */
 </style>

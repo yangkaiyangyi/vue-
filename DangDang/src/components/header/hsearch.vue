@@ -25,7 +25,7 @@ export default {
   width: 100%;
   display: flex;
   height: 0.8rem;
-  padding-top: 0.2rem;
+  padding-top: 0.15rem;
 }
 span{
   display: block;
@@ -75,7 +75,7 @@ span{
 .a2{
   display: block;
   text-align: center;
-  padding-top:0.2em; 
+  padding-top:-0.2em; 
 }
 .icon1{
   width: 1.3em;
