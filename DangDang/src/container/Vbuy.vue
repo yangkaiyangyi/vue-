@@ -1,16 +1,19 @@
 <template>
   <div>
-      4
+    <topbar/>
   </div>
 </template>
 
 <script>
+ import topbar from '../components/topbar.vue'
 export default {
-
   data () {
     return {
       
     }
+  },
+  components:{
+    topbar
   }
 }
 </script>

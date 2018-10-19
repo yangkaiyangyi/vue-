@@ -3,6 +3,9 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+// 引入jquery
+import $ from 'jquery'
+window.$ = $
 
 // 移动自适应
 import 'lib-flexible'
