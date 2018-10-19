@@ -4,7 +4,7 @@
 
   <div class="footer">
     
-  <a href="#"  v-for ='( img, index) in imgArr' @click="torute(index)" :key="index" > <img :src="img"   alt="" srcset="" :class ="{'active':$route.path===roueArr[index]}"> </a> 
+  <a  v-for ='( img, index) in imgArr' @click="torute(index)" :key="index" > <img :src="img"   alt="" srcset="" :class ="{'active':$route.path===roueArr[index]}"> </a> 
 </div>
   
 </template>

@@ -1,7 +1,7 @@
 <template>
   <div>
       <header> 
-        <a href="javascript:history.back()" class="back"></a>
+        <a  class="back" @click="back"></a>
         <div class="middle"> {{name}} </div>
         <a href="#" class="nav" @click="change" :class="{'active':bool}"></a>
       </header>
@@ -24,22 +24,27 @@ export default {
   },
   methods: {
     change() {
-      this.bool = !this.bool;
+      if ($(".top1").css("display") == "none") {
+        $(".top1").slideDown();
+      } else {
+        $(".top1").slideUp();
+      }
+    },
+    back() {
+      this.$router.back(-1); //返回上一层
     },
     changeName() {
       console.log(this.$route.path);
       // if (this.$route.path === "/buy") {
       //   this.name = "值得买";
       // }
-      switch(this.$route.path){
-           case  "/buy":
-           this.name = "值得买";
-           break;
-            case  "/my":
-           this.name = "我的当当";
-           break;
-           
-
+      switch (this.$route.path) {
+        case "/buy":
+          this.name = "值得买";
+          break;
+        case "/my":
+          this.name = "我的当当";
+          break;
       }
     }
   },
@@ -58,6 +63,7 @@ header {
   width: 100%;
   display: flex;
   height: 80px;
+  border-bottom: 1px solid #d8d8d8;
 }
 .back {
   flex: 20%;
@@ -84,12 +90,13 @@ header {
 .top1 {
   position: static !important;
   background: #d8d8d8;
-  
 }
-.fade-enter-active, .fade-leave-active {
-      transition: height 0s
+.fade-enter-active,
+.fade-leave-active {
+  transition: height 0s;
 }
-.fade-enter, .fade-leave-active {
-      height: 0
+.fade-enter,
+.fade-leave-active {
+  height: 0;
 }
 </style>

@@ -44,18 +44,19 @@
 
       <div class="kb"></div>
       <!-- 循环开始2 -->
-        <div class="box2"  v-for='(item ,index) in imgArr' :key='index' style="height:40px;line-height:40px">
-          <a href="#">
+      <div>
+        <div class="box2"  v-for='(item ,i) in gArr'  :key='i' style="height:40px;line-height:40px">
+          <a >
             <img src="../../assets/contentimg/qiang7.jpg" alt="" srcset="">
           {{item}}
           <em style="color:#fff;margin-top:5px">查看全部购买商品</em>
           </a>
       </div>
-      
+      </div>
       <!-- 客服反馈 -->
        <div class="kb"></div>
       <div class="box2" style="height:40px;line-height:40px">
-          <a href="#">
+          <a >
             <img src="../../assets/contentimg/wd2.png" alt="" srcset="">
         客服反馈
           <em style="color:#fff;margin-top:5px">查看全部购买商品</em>
@@ -104,7 +105,8 @@ import log from "../contain/gotop.vue";
 export default {
   data() {
     return {
-      imgArr: ["我的礼券", "积分兑现", "我的电子书", "我的礼品卡", "收货地址"]
+      imgArr: ["我的礼券", "积分兑现", "我的电子书", "我的礼品卡", "收货地址"],
+      gArr: ["我的礼券", "积分兑现", "我的电子书", "我的礼品卡", "收货地址"]
     };
   },
   components: {
@@ -169,10 +171,11 @@ export default {
   vertical-align: middle;
 }
 .box2 a em {
-  display: inline-block;
-  float: right;
+  display: block;
+  float : right;
   padding-right: 30px;
   margin-right: 20px;
+  /* margin-left: 200px; */
   background: url("../../assets/contentimg/rightarrow.png") no-repeat right
     center;
   background-size: 10% 38%;
