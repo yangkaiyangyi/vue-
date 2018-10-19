@@ -5,7 +5,10 @@
         <div class="middle"> {{name}} </div>
         <a href="#" class="nav" @click="change" :class="{'active':bool}"></a>
       </header>
+        <transition name="fade">
       <footbar class="top1" v-show="bool"></footbar>
+  </transition>
+      
   </div>
 </template>
 
@@ -81,5 +84,12 @@ header {
 .top1 {
   position: static !important;
   background: #d8d8d8;
+  
+}
+.fade-enter-active, .fade-leave-active {
+      transition: height 0s
+}
+.fade-enter, .fade-leave-active {
+      height: 0
 }
 </style>

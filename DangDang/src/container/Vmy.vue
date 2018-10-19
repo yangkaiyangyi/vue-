@@ -1,11 +1,13 @@
 <template>
   <div>
     <topbar/>
+    <log/>
   </div>
 </template>
 
 <script>
  import topbar from '../components/topbar.vue'
+ import log from '../components/login/log.vue'
 export default {
   data () {
     return {
@@ -13,7 +15,8 @@ export default {
     }
   },
   components:{
-    topbar
+    topbar,
+    log
   }
 }
 </script>
