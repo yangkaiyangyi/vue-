@@ -45,6 +45,12 @@ export default {
         case "/my":
           this.name = "我的当当";
           break;
+         case "/denlu":
+          this.name = "登陆";
+          break;
+         case "/zuce":
+         this.name = "注册";
+          break;
       }
     }
   },
