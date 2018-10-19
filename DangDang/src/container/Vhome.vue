@@ -5,7 +5,7 @@
     <conbar/>
     
     <cmiaosa/>
-    <!-- <footbar/> -->
+    <footbar/>
   </div>
 </template>
 

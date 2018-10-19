@@ -1,20 +1,20 @@
 <template>
   <div>
-     <h1>3</h1> 
-      <footbar/>
+      <topbar/>
+      register
   </div>
 </template>
 
 <script>
- import footbar from "../components/footbar/footbar.vue";
+import topbar from '../topbar.vue'
 export default {
   data () {
     return {
-      
+    
     }
   },
   components:{
-    footbar
+      topbar
   }
 }
 </script>

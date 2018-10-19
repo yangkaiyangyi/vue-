@@ -1,16 +1,20 @@
 <template>
   <div>
       1
+      <footbar/>
   </div>
 </template>
 
 <script>
+ import footbar from "../components/footbar/footbar.vue";
 export default {
-
   data () {
     return {
       
     }
+  },
+  components:{
+    footbar
   }
 }
 </script>

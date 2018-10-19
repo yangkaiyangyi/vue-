@@ -2,12 +2,14 @@
   <div>
     <topbar/>
     <log/>
+    <footbar/>
   </div>
 </template>
 
 <script>
  import topbar from '../components/topbar.vue'
  import log from '../components/login/log.vue'
+ import footbar from "../components/footbar/footbar.vue";
 export default {
   data () {
     return {
@@ -16,7 +18,8 @@ export default {
   },
   components:{
     topbar,
-    log
+    log,
+    footbar
   }
 }
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div>
       <div class="box">
-            <a href="#" class="log">登陆/注册</a>
+            <a href="#/denlu" class="log">登陆/注册</a>
       </div>
 
       <div class="box1">

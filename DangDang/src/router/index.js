@@ -8,6 +8,7 @@ import cart from '../container/Vcart'
 import my from '../container/Vmy'
 //登陆注册
 import denlu from '../components/login/denlu'
+import zuce from '../components/login/zuce'
 
 Vue.use(Router)
 
@@ -40,6 +41,11 @@ export default new Router({
       path: '/denlu',
       name: 'denlu',
       component: denlu
+    },
+    {
+      path: '/zuce',
+      name: 'zuce',
+      component: zuce
     }
   ]
 })
