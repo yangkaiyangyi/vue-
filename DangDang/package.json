@@ -17,6 +17,7 @@
     "better-scroll": "^1.13.2",
     "jquery": "^3.3.1",
     "lib-flexible": "^0.3.2",
+    "mint-ui": "^2.2.13",
     "mock": "^0.1.1",
     "mockjs": "^1.0.1-beta3",
     "px2rem-loader": "^0.1.9",

@@ -5,7 +5,7 @@
           <div class="box1">
               <div class="denlu1 telephone">
                   <span class="peo1"> <icon-svg icon-class="ren-copy" class="icon2" /> </span>
-                  <span class="peo2"><input type="text" placeholder="手机号/邮箱/昵称" v-model="telephone"></span>
+                  <span class="peo2"><input type="text" placeholder="手机号/邮箱/昵称" ></span>
                   <span class="peo3"></span>
               </div>
 

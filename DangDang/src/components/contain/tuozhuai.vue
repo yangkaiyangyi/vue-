@@ -55,7 +55,7 @@ export default {
     overflow: hidden;
     padding-top:20px; 
     white-space: nowrap; 
-overflow-x: auto;
+/* overflow-x: auto; */
     /* white-space: nowrap;overflow-x:scroll;overflow-y:hidden; */
      /* transform: translate(-649px, 0px) translateZ(0px); */
 }

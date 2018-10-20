@@ -10,6 +10,9 @@ import my from '../container/Vmy'
 import denlu from '../components/login/denlu'
 import zuce from '../components/login/zuce'
 
+//商品prodcut
+import index from '../components/product/index'
+//懒加载
 Vue.use(Router)
 
 export default new Router({
@@ -46,6 +49,11 @@ export default new Router({
       path: '/zuce',
       name: 'zuce',
       component: zuce
+    },
+    {
+      path: '/index',
+      name: 'index',
+      component: index
     }
   ]
 })
