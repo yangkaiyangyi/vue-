@@ -19,7 +19,8 @@
       </div>
       <daojishi/>
       
-      <tuozhuai/>
+      <!-- <tuozhuai/> -->
+      <activelist/>
       <gotop/>
       <ccontent/>
     
@@ -27,9 +28,13 @@
 </template>
 
 <script>
+import BScroll from 'better-scroll'
+// 需要引入
+import data from '../../common/util/mock.js'
 
 import daojishi from './daojishi.vue';
 import tuozhuai from './tuozhuai.vue';
+import activelist from './activelist.vue';
 import ccontent from './ccontent.vue';
 import gotop from './gotop.vue';
  export default {
@@ -37,7 +42,8 @@ import gotop from './gotop.vue';
       daojishi,
         tuozhuai,
         ccontent,
-        gotop
+        gotop,
+        activelist
     },
   data() {
     return {
@@ -107,6 +113,7 @@ import gotop from './gotop.vue';
   },
   created() {
     this.play();
+    
   }
 };
 </script>
