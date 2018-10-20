@@ -9,10 +9,10 @@ Vue.use(Vuex)
 
 // 存放着组件中信息的状态
 const state = {
-  navState: 0,  //获取导航条的状态
+  navState: 0,  //获取详情页导航条的状态
   activityList: [],
   productInfo: {},
-  tabHidden: true,
+ 
   
 }
 

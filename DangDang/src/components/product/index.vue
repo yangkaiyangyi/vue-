@@ -6,10 +6,18 @@
         <a href="#" class="nav" @click="change" :class="{'active':bool}"></a>
       </header>
       
+<footbar class="top1" v-show="bool"></footbar>
+    <v-touch >
+      <transition >
+        <keep-alive>
+          <router-view ></router-view>
+        </keep-alive>
+       </transition>
+    </v-touch>
 
       <bottombar/>
 
-      <footbar class="top1" v-show="bool"></footbar>
+      
   
       
   </div>
@@ -18,13 +26,11 @@
 <script>
 import footbar from "../footbar/footbar.vue";
 import bottombar from "./bottombar.vue";
-import topbar from "./topbar.vue";
+import topbar from "./ptopbar.vue";
 export default {
   data() {
     return {
-      bool: false,
-      name: "",
-      arrtext: ["商品", "详情", "评论"]
+      bool: false
     };
   },
   methods: {
@@ -40,11 +46,31 @@ export default {
     }
   },
   computed: {
+    getNavState() {
+      return this.$store.state.navState;
+    },
     product() {
       return this.$store.state.productInfo;
+      console.log(this.productInfo)
     }
   },
-
+  watch: {
+    getNavState(value) {
+      switch (value) {
+        case 0:
+          this.$router.push("/index/goods"),console.log(1) ;
+          break;
+        case 1:
+          this.$router.push("/index/detail"),console.log(2);
+          break;
+        case 2:
+          this.$router.push("/index/comment"),console.log(3);
+          break;
+        default:
+          this.$router.push("/index/goods");
+      }
+    }
+  },
   components: {
     footbar,
     bottombar,

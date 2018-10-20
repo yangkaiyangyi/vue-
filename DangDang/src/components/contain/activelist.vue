@@ -46,7 +46,7 @@ export default {
       axios.get("/api/data").then(res => {
         this.$store.dispatch('productInfo', res.data.activityLists[id-1])
         // 在这里添加路由就不会出现调整页面的数据替换 异步
-        this.$router.push({name:"product", params: {id:id}})
+        this.$router.push({name:"index", params: {id:id}})
       }).catch(err => {
         console.log(err)
       })

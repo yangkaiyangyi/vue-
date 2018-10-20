@@ -24,11 +24,16 @@ export default {
   },
   methods: {
     change() {
+      // this.bool= !this.bool;
       if ($(".top1").css("display") == "none") {
+        // this.bool= true;
         $(".top1").slideDown();
       } else {
+        
         $(".top1").slideUp();
+        // this.bool= false;
       }
+    
     },
     back() {
       this.$router.back(-1); //返回上一层
@@ -88,7 +93,7 @@ header {
   background: url("./../assets/contentimg/menu.png") no-repeat center center;
   background-size: 38% 24%;
 }
-.nav.active {
+.active {
   background: url("./../assets/contentimg/menu-active.png") no-repeat center
     center;
   background-size: 26% 38%;

@@ -12,6 +12,9 @@ import zuce from '../components/login/zuce'
 
 //商品prodcut
 import index from '../components/product/index'
+import goods from '../components/product/goods'
+import detail from '../components/product/detail'
+import comment from '../components/product/comment'
 //懒加载
 Vue.use(Router)
 
@@ -53,7 +56,26 @@ export default new Router({
     {
       path: '/index',
       name: 'index',
-      component: index
-    }
+      component:  index,
+      redirect: '/index/goods', 
+      children: [
+        {
+          path: 'goods',
+          name: 'goods',
+          component: goods
+        },
+        {
+          path: 'detail',
+          name: 'detail',
+          component: detail,
+        },
+        {
+          path: 'comment',
+          name: 'comment',
+          component: comment,
+        }
+      ]
+    },
+
   ]
 })
