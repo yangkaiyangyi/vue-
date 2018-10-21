@@ -47,6 +47,22 @@ export default {
         this.$store.dispatch('productInfo', res.data.activityLists[id-1])
         // 在这里添加路由就不会出现调整页面的数据替换 异步
         this.$router.push({name:"index", params: {id:id}})
+    //     父组件：this.$router.push({
+    //                     path: '/describe',
+    //                     query: {
+    //                                   id: id
+    //                     }
+    //                 })
+    // 路由设置：
+    //                 {
+    //                      path: '/describe',
+    //                      name: 'Describe',
+    //                      component: Describe
+    //                  }
+
+    //  子组件获取：
+                   
+    //          this. $route.query.id
       }).catch(err => {
         console.log(err)
       })

@@ -52,7 +52,7 @@ export default {
     }
   },
   // watch: {
-  //   getNavState(value) {
+  //   nowIndex(value) {
   //     switch (value) {
   //       case 0:
   //         this.$router.push("/index/goods"),console.log(1) ;

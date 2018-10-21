@@ -39,7 +39,7 @@ export default {
       slideTab(index) {
         this.nowIndex = index;
         let router = new VueRouter();
-        let href = index === 0 ? '/index/one' : index === 1 ? '/index/two' : index === 2 ? '/index/three' : index === 3 ? '/four' : index === 4 ? '/five' : '/one';
+        let href = index === 0 ? '/index/one' : index === 1 ? '/index/two' : index === 2 ? '/index/three' :  '/one';
         // 利用路由的push方法更新路径地址
         router.push(href);
       }
