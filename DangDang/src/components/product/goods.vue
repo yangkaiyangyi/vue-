@@ -1,7 +1,28 @@
 <template>
   <div>
       goods
+      <div>1</div>
+      <div>1</div>
+      <div>11</div>
+      <div>1</div>
+      <div>1</div>
+      <div>1</div>
+      <div>1</div>
+      <div>1</div>
+      <div>1</div>
+         <div>1</div>
+      <div>1</div>
+     <div>1</div>
+      <div>1</div>
+      <div>11</div>
+      <div>1</div>
+      <div>1</div>
+      <div>1</div>
+      <div>1</div>
+      <div>1</div>
+      <div>1</div>
   </div>
+  
 </template>
 
 <script>

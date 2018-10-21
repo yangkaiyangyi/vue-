@@ -2,7 +2,7 @@
   <div class="middle">               
          <div class="nav-wrapper" ref="navWrapper">
          <ul>
-        <li class="mid" @click="btn(index)" :class="{'active':chooseId==index}" v-for="(item,index) in arrtext" :key='index'> {{item}}  </li>
+        <li class="mid" @click="tabClick(index)" :class="{'active':nowIndex==index}" v-for="(item,index) in arrtext" :key='index'> {{item}}  </li>
        </ul>
         </div>
    
@@ -11,19 +11,38 @@
 
 <script>
 import BScroll from "better-scroll";
+import VueRouter from 'vue-router';
 export default {
   data() {
     return {
       arrtext: ["商品", "详情", "评论"],
-      chooseId: 0
+      nowIndex: 0
     };
   },
-
+ mounted() {
+      this.$nextTick(() => {
+        // 初始化，保证刷新页面后内容区和导航键一致
+        this.initPage();
+      });
+      // 接收swiper组件发射的index进行导航按钮切换高亮和更新模板地址
+      this.$root.eventHub.$on('slideTab', this.slideTab);
+    },
   methods: {
-    btn(index) {
-      this.chooseId = index;
-      this.$store.state.navState = this.chooseId;
-    }
+      initPage() {
+        this.nowIndex = this.$route.path === '/index/one' ? 0 : this.$route.path === '/index/two' ? 1 : this.$route.path === '/index/three' ? 2 : 0;
+      },
+      tabClick(index) {
+        this.nowIndex = index;
+        // 点击导航按钮时向swiper组件发射index
+        this.$root.eventHub.$emit('changeTab', index);
+      },
+      slideTab(index) {
+        this.nowIndex = index;
+        let router = new VueRouter();
+        let href = index === 0 ? '/index/one' : index === 1 ? '/index/two' : index === 2 ? '/index/three' : index === 3 ? '/four' : index === 4 ? '/five' : '/one';
+        // 利用路由的push方法更新路径地址
+        router.push(href);
+      }
   },
   created() {
     this.$nextTick(() => {
@@ -34,6 +53,7 @@ export default {
       });
     });
   }
+   
 };
 </script>
 

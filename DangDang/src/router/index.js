@@ -57,20 +57,20 @@ export default new Router({
       path: '/index',
       name: 'index',
       component:  index,
-      redirect: '/index/goods', 
+      redirect: '/index/one', 
       children: [
         {
-          path: 'goods',
+          path: 'one',
           name: 'goods',
           component: goods
         },
         {
-          path: 'detail',
+          path: 'two',
           name: 'detail',
           component: detail,
         },
         {
-          path: 'comment',
+          path: 'three',
           name: 'comment',
           component: comment,
         }

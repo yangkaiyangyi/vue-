@@ -7,13 +7,7 @@
       </header>
       
 <footbar class="top1" v-show="bool"></footbar>
-    <v-touch >
-      <transition >
-        <keep-alive>
-          <router-view ></router-view>
-        </keep-alive>
-       </transition>
-    </v-touch>
+   <swiper/>
 
       <bottombar/>
 
@@ -27,6 +21,9 @@
 import footbar from "../footbar/footbar.vue";
 import bottombar from "./bottombar.vue";
 import topbar from "./ptopbar.vue";
+ import swiper from './swiper.vue';
+import Swiper from '../../../static/swiper.min';
+import '../../../static/swiper.min.css';
 export default {
   data() {
     return {
@@ -46,35 +43,36 @@ export default {
     }
   },
   computed: {
-    getNavState() {
-      return this.$store.state.navState;
-    },
+    // nowIndex() {
+    //   return this.$store.state.nowIndex;
+    // },
     product() {
       return this.$store.state.productInfo;
       console.log(this.productInfo)
     }
   },
-  watch: {
-    getNavState(value) {
-      switch (value) {
-        case 0:
-          this.$router.push("/index/goods"),console.log(1) ;
-          break;
-        case 1:
-          this.$router.push("/index/detail"),console.log(2);
-          break;
-        case 2:
-          this.$router.push("/index/comment"),console.log(3);
-          break;
-        default:
-          this.$router.push("/index/goods");
-      }
-    }
-  },
+  // watch: {
+  //   getNavState(value) {
+  //     switch (value) {
+  //       case 0:
+  //         this.$router.push("/index/goods"),console.log(1) ;
+  //         break;
+  //       case 1:
+  //         this.$router.push("/index/detail"),console.log(2);
+  //         break;
+  //       case 2:
+  //         this.$router.push("/index/comment"),console.log(3);
+  //         break;
+  //       default:
+  //         this.$router.push("/index/goods");
+  //     }
+  //   }
+  // },
   components: {
     footbar,
     bottombar,
-    topbar
+    topbar,
+    swiper
   }
 };
 </script>
