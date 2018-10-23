@@ -56,6 +56,9 @@ export default {
          case "/zuce":
          this.name = "注册";
           break;
+          case "/cart":
+         this.name = "购物车";
+          break;
       }
     }
   },

@@ -12,7 +12,9 @@ const state = {
   // nowIndex: 0,  //获取详情页导航条的状态
   activityList: [],
   productInfo: {},
- 
+  count:1,
+  carfull:true,
+  
   
 }
 

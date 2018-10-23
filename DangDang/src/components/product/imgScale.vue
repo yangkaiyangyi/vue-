@@ -54,7 +54,7 @@ export default {
       width :100%;
       display: block;
       position: absolute;
-      height :70%;
+      height :50%;
       left: 0;
       top :20%;
       right: 0;

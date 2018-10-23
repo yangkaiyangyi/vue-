@@ -1,12 +1,15 @@
 <template>
   <div>
-      1
+    <hsearchtwo/>
+    <test/>
       <footbar/>
   </div>
 </template>
 
 <script>
+ import hsearchtwo from "../components/header/hsearchtwo.vue";
  import footbar from "../components/footbar/footbar.vue";
+   import test from "./Vtest.vue";
 export default {
   data () {
     return {
@@ -14,7 +17,9 @@ export default {
     }
   },
   components:{
-    footbar
+    footbar,
+    hsearchtwo,
+    test
   }
 }
 </script>
