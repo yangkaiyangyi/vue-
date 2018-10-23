@@ -3,7 +3,7 @@
       <header> 
         <a  class="back" @click="back"></a>
         <div class="middle"  v-html="name">  </div>
-        <a href="#" class="nav" @click="change" :class="{'active':bool}"></a>
+        <a  class="nav" @click="change" :class="{'active':bool}"></a>
       </header>
       
       <footbar class="top1" v-show="bool"></footbar>
