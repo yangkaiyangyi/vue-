@@ -32,11 +32,13 @@ export default {
         this.nowIndex = this.$route.path === '/index/one' ? 0 : this.$route.path === '/index/two' ? 1 : this.$route.path === '/index/three' ? 2 : 0;
       },
       tabClick(index) {
+        scrollTo(0,0) //tab左右滑动回到顶部，解决swiper页面高度继承的的问题
         this.nowIndex = index;
         // 点击导航按钮时向swiper组件发射index
         this.$root.eventHub.$emit('changeTab', index);
       },
       slideTab(index) {
+         scrollTo(0,0) //tab左右滑动回到顶部，解决swiper页面高度继承的的问题
         this.nowIndex = index;
         let router = new VueRouter();
         let href = index === 0 ? '/index/one' : index === 1 ? '/index/two' : index === 2 ? '/index/three' :  '/one';
@@ -49,7 +51,8 @@ export default {
       this.navScroll = new BScroll(this.$refs.navWrapper, {
         click: true,
         scrollX: true,
-        eventPassthrough: "vertical"
+        eventPassthrough: "vertical",
+         
       });
     });
   }

@@ -30,7 +30,9 @@ export default {
         return this.$store.state.productInfo
     }
   },
-
+ mounted(){
+   scrollTo(0,0);
+ }
 
 }
 </script>

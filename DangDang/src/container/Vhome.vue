@@ -1,11 +1,12 @@
 <template>
   <div>
     <hsearch/>
+    <div class="homebox">
     <lunbo/>
-    <conbar/>
-    
+    <conbar/>  
     <cmiaosa/>
     <footbar/>
+    </div>
   </div>
 </template>
 
@@ -15,6 +16,7 @@ import conbar from "../components/contain/conbar.vue";
 import cmiaosa from "../components/contain/cmiaosa.vue";
 import footbar from "../components/footbar/footbar.vue";
 import lunbo from "../components/banner/lunbo1.vue";
+
 export default {
   data() {
     return {};
@@ -24,7 +26,15 @@ export default {
     lunbo,
     conbar,
     cmiaosa,
-    footbar
+    footbar,
+  
+  },
+  mounted(){
+    scrollTo(0,0);
+    // if(window.location.reload()){
+    //   scrollTo(0,0);
+    // }
+    
   }
 };
 </script>

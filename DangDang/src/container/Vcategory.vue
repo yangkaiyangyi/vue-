@@ -20,6 +20,9 @@ export default {
     footbar,
     hsearchtwo,
     test
+  },
+  mounted(){
+    scrollTo(0,0)
   }
 }
 </script>

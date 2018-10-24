@@ -2,7 +2,8 @@
   <div>
     <topbar/>
 
-          <!-- swiper轮播 -->
+          <!-- swiper轮播swiper轮播和
+          通过增加不同类名，module01， module02，在js中也要对应使之在同一个页面使用 -->
   <div class="swiper-container">
     <div class="swiper-wrapper">
         <div class="swiper-slide" v-for="(item,index) in imgArr" :key="index">
@@ -34,39 +35,42 @@
     </div>
     </div>
 
+      <!-- 秒杀横向滚动商品列表 -->
      <div class="miaosha">
          <h2 class="chf">          
            <span>
              更多》
            </span>
          </h2>
-
          <div class="shanav" ref="menuWrapper">
-           <div class="shagun">
-       <a class="sha" v-for="(item,index) in imgArr" :key="index">
-     <img :src="item.cartImg" >
-         <h3 style="font-size:12px">  {{item.type}} </h3>
-      </a>
-      </div>
-      </div>
+              <div class="shagun">
+                    <a class="sha" v-for="(item,index) in imgArr" :key="index">
+                    <img :src="item.cartImg" >
+                    <h3 style="font-size:12px">  {{item.type}} </h3>
+                      </a>
+              </div>
+         </div>
      </div>
    
-  <div>9</div>
-  <div>9</div>
-  <div>9</div>
-  <div>9</div>
-  <div>9</div>
-  <div>9</div>
-  <div>9</div>
-  <div>9</div>
-  <div>9</div>
+    <loadmore/>
+
+  <div>better-scroll插件 商品列表横向左右滚动</div>
+  <div>swiper 轮播</div>
+  <div>封装的上拉刷新，下拉更多组件loadfresh </div>
+  <div> 生活总是美好的，积极向上吧青年</div>
+   <div style="color:#FFF">0</div>
+   <div style="color:#FFF">0</div>
+   <div style="color:#FFF">0</div>
+   <div style="color:#FFF">0</div>
     <footbar/>
+   
   </div>
 </template>
 
 <script>
 import BScroll from "better-scroll";
 import topbar from "../components/topbar.vue";
+import loadmore from "../components/loadmore.vue";
 import footbar from "../components/footbar/footbar.vue";
 import Swiper from "../../static/swiper.min";
 import "../../static/swiper.min.css";
@@ -116,7 +120,8 @@ export default {
   },
   components: {
     topbar,
-    footbar
+    footbar,
+    loadmore
   },
   methods: {
     getlist() {
@@ -163,6 +168,7 @@ export default {
     },
   },
   mounted() {
+     scrollTo(0,0) //回到顶部
       this.getlist();
       //  $(".shagun").css("transform","translate(15px,0px)");//在x轴15度方向固定
       this.$nextTick(() => {
@@ -276,7 +282,7 @@ export default {
   width: 200px;
 }
 .shanav{
-  width: 700px;
+  width: 100%;
   overflow: hidden;
   height: 100%;
    white-space :nowrap  
@@ -284,6 +290,6 @@ export default {
 .shagun{
   width: 1300px;
   height: 100%;
-  margin-left: 30px;
+  /* margin-left: 30px; */
 }
 </style>

@@ -1,20 +1,39 @@
 <template>
+<div>
   <div class="researchBox">
      <a href="#" class="a1"> <img src="../../assets/iconfontimg/ddlogial.png" alt="" srcset=""> </a>
-      <div class="text_box">
+      <div class="text_box" @click="change">
      <span><icon-svg icon-class="fangdajing " class="icon1"/></span>
     <input id="search" name="search" type="text" placeholder="19周年感恩回馈，5折封顶">
        </div>
         <a href="#" class="a2"> <icon-svg icon-class="fenleitubiao" class="icon2" />  </a>
   </div>
+ 
+       <sousuo v-show="bool" class="sousuo"></sousuo>
+ </div>
+ 
+  
 </template>
 
 <script>
+import sousuo from "./sousuo.vue";
 export default {
   data() {
     return {
-     
+      bool:false
     };
+  },
+  methods:{
+    change(){
+      this.pool = true;
+      $(".homebox").hide();
+       $(".sousuo").show();
+      $('.researchBox').hide();
+
+    }
+  },
+  components:{
+    sousuo
   }
 };
 </script>

@@ -76,7 +76,11 @@ export default {
     bottombar,
     topbar,
     swiper
-  }
+  },
+  // mounted(){
+  //   document.body.scrollTop = 0
+  //           document.documentElement.scrollTop = 0
+  // }
 };
 </script>
 

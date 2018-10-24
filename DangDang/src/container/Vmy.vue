@@ -20,6 +20,9 @@ export default {
     topbar,
     log,
     footbar
+  },
+  mounted(){
+    scrollTo(0,0)
   }
 }
 </script>

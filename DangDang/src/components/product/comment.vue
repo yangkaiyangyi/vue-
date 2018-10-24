@@ -58,7 +58,10 @@ export default {
   },
   components:{
      "img-scale": ImgScale
-  }
+  },
+  // mounted(){
+  //   scrollTo(0,0);
+  // }
 }
 </script>
 
