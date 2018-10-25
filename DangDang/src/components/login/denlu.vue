@@ -5,7 +5,8 @@
           <div class="box1">
               <div class="denlu1 telephone">
                   <span class="peo1"> <icon-svg icon-class="ren-copy" class="icon2" /> </span>
-                  <span class="peo2"><input type="text" placeholder="手机号/邮箱/昵称"></span>
+                  <span class="peo2 den1"><input type="text" placeholder="手机号/邮箱/昵称" @input="oninput"></span>
+                  <span class="clear_icon"  @click="clear1"> 1111</span>
                   <span class="peo3"></span>
               </div>
 
@@ -13,7 +14,8 @@
 
                 <div class="denlu1 password">
                   <span class="peo1"> <icon-svg icon-class="cloud-lock" class="icon2" /> </span>
-                  <span class="peo2"><input type="text" placeholder="密码"></span>
+                  <span class="peo2 den2"><input type="text" placeholder="密码" @input="oninput2"></span>
+                   <span class="clear_icon2" @click="clear2"> 1111</span>
                   <span class="peo3 lock"></span>
               </div>
 
@@ -56,6 +58,32 @@ export default {
     return {
       
     }
+  },
+  methods:{
+      oninput(){
+          if($(".den1 input").val()!=''){
+            $(".clear_icon").css("opacity","1");  
+          }else{
+              $(".clear_icon").css("opacity","0"); 
+          }
+      },
+        oninput2(){
+          if($(".den2 input").val()!=''){
+            $(".clear_icon2").css("opacity","1");  
+          }else{
+              $(".clear_icon2").css("opacity","0"); 
+          }
+      },
+      clear1(){
+          $(".den1 input").val("");
+          $(".clear_icon").css("opacity","0");
+          console.log(8888)
+      },
+      clear2(){
+           $(".den2 input").val("");
+          $(".clear_ico2").css("opacity","0");
+          console.log(6666)
+      }
   },
   components:{
       topbar
@@ -208,5 +236,20 @@ li i{
     height: 30px;
  background: url('../../assets/contentimg/check.png') no-repeat left center;
     background-size: 86% 76%;
+}
+.clear_icon{
+    /* display: none; */
+    opacity: 0;
+    color: #fff;
+    /* display: inline; */
+    background: url('../../assets/contentimg/clear_icon.png') no-repeat center center;
+    background-size:70%,100%; 
+}
+.clear_icon2{
+    opacity: 0;
+    color: #fff;
+    /* display: inline; */
+    background: url('../../assets/contentimg/clear_icon.png') no-repeat center center;
+    background-size:70%,100%; 
 }
 </style>

@@ -32,6 +32,7 @@ export default {
     };
   },
   methods:{
+    //第一种贯穿
     torute(index){
       switch(index){
         case 0:
@@ -54,6 +55,10 @@ export default {
         break;
       }
     }
+    //第二种
+    // torute(index,path){
+    //         this.$router.push(path)
+    //   }
   }
 };
 </script>

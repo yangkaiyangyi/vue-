@@ -47,7 +47,7 @@
        </p>
 
         </div>
-       <div class="jiesuan">
+       <div class="jiesuan" v-show="!$store.state.carfull">
        <div class="j1"> <input type="checkbox" v-model="isclear" /><span>全选</span></div> 
         <p class="j2"> 合计 <span class="all"> ￥{{sum}}</span> </p>
         <a class="j3" href="#/denlu">结算 </a>
