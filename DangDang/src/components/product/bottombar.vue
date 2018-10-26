@@ -7,7 +7,7 @@
               <a > <span></span> <i>购物车</i> </a>
           </div>
             <div class="b2"   @click="change">立即购买 </div>
-            <a class="b3" href="#/cart" @click="carfull"> 加入购物车</a>
+            <a class="b3" > 加入购物车</a>
             
       </div>
     
@@ -39,18 +39,18 @@
                <div class="buy-num">
               <span class="num_name">购买数量</span>
               <div class="num_content">
-                <span class="shopping shop_reduce"  @click="$store.commit('reduce')">
+                <span class="shopping shop_reduce"  @click="reduce">
                   <img src="../../assets/contentimg/reductIcon1.png" alt="">
                 </span>
-                <span class="input">{{$store.state.count}}</span>
-                <span class="shopping shop_add"  @click="$store.commit('add')">
+                <span class="input">{{buyNum}}</span>
+                <span class="shopping shop_add"  @click="add">
                   <img src="../../assets/contentimg/addIcon.png" alt="">
                 </span>
               </div>
             </div>
              <div class="submit">
-            <span class="add1 add2" @click="addCartAtOnce">加入到购物车</span>
-            <span class="add1 add3" @click="addCartAtOnce">立即购买</span>
+            <a class="add1 add2" @click="addCartAtOnce">加入到购物车</a>
+            <a class="add1 add3" @click="carfull" href="#/cart"  >立即购买</a>
           </div>
       
           </div>
@@ -79,7 +79,15 @@ export default {
     }
   },
   methods:{
-        change() {
+      reduce(){
+          if(this.buyNum>1){
+               this.buyNum--
+          }  
+      },
+      add(){
+          this.buyNum++
+      },
+     change() {
       if ($(".carchoice").css("display") == "block") {
        
         $(".carchoice").slideUp();
@@ -91,10 +99,13 @@ export default {
       ,
       carfull(){
           this.$store.state.carfull = false;
+        //   this.$store.state.goodsList.push(this.$store.state.productInfo)
+          console.log(this.$store.state.goodsList)
       },
       // 真正的添加到购物车
     addCartAtOnce () {
       //  添加  商品信息到购物车
+      this.$store.state.carfull = false;
       let productInfo = {
         id: this.product.id,
         img: this.product.cartImg,
@@ -104,7 +115,27 @@ export default {
         price: this.product.nowPrice,
         inventory: this.product.inventory
       }
-      console.log("添加到购物车成功!")
+      
+      let flag = true;
+        // console.log(this.$store.state.goodsList)
+         this.$store.state.goodsList.forEach(element => {
+              console.log(999);
+             if(productInfo.id===element.id){
+                flag = false;
+                
+                 
+             }
+         });
+       if(flag){
+            this.$store.state.goodsList.push(productInfo)
+               console.log(this.$store.state.goodsList)
+              console.log("添加到购物车成功!")
+       
+       }else{
+           alert("购物车已经有了，客客")
+       }
+         
+       
     },
     goCartPage () {
       this.$router.replace('/Vcart')
@@ -114,12 +145,8 @@ export default {
       this.isChoose = index
     }
   },
-   // 计算属性获取信息
-  computed: {
-    product () {
-      return this.$store.state.productInfo
-    }
-  },
+  
+  
  
 };
 </script>

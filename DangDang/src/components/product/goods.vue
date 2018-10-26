@@ -72,7 +72,7 @@
             </ul>
       </div>
 <div class="kb"></div>
-      <div class="cbuy">
+      <!-- <div class="cbuy">
          <p>品名:  {{product.title}}</p> 
         <section class="quantity">
       <h4>数量：</h4>
@@ -84,7 +84,7 @@
             <span class="plus on"  @click="$store.commit('add')">+</span>
               </div>
     </section>
-      </div>
+      </div> -->
 
       <div class="kb"></div>
  
