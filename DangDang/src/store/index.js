@@ -14,7 +14,8 @@ const state = {
   productInfo: {},
   // count:1,
   carfull:true,
-  goodsList:[]
+  goodsList: [],
+  token:0
   
   
 }

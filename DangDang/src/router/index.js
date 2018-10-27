@@ -18,7 +18,7 @@ import comment from '../components/product/comment'
 //懒加载
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   routes: [
     {
       path: '/',
@@ -29,7 +29,8 @@ export default new Router({
       path: '/category',
       name: 'category',
       component: category
-    },{
+    },
+    {
       path: '/buy',
       name: 'buy',
       component: buy
@@ -37,8 +38,12 @@ export default new Router({
     {
       path: '/cart',
       name: 'cart',
-      component: cart
-    },{
+      component: cart,
+      meta: {
+        requireAuth: true //  添加该字段，表示进入这个路由是需要登录才能进入的
+      }
+    },
+    {
       path: '/my',
       name: 'my',
       component: my
@@ -56,7 +61,7 @@ export default new Router({
     {
       path: '/index',
       name: 'index',
-      component:  index,
+      component: index,
       redirect: '/index/one', 
       children: [
         {
@@ -79,3 +84,5 @@ export default new Router({
 
   ]
 })
+  
+export default router

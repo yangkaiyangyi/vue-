@@ -5,7 +5,7 @@
           <div class="box1">
               <div class="denlu1 telephone">
                   <span class="peo1"> <icon-svg icon-class="ren-copy" class="icon2" /> </span>
-                  <span class="peo2 den1"><input type="text" placeholder="手机号/邮箱/昵称" @input="oninput"></span>
+                  <span class="peo2 den1"><input type="text" v-model="telnum" placeholder="手机号/邮箱/昵称" @input="oninput"></span>
                   <span class="clear_icon"  @click="clear1"> 1111</span>
                   <span class="peo3"></span>
               </div>
@@ -14,13 +14,15 @@
 
                 <div class="denlu1 password">
                   <span class="peo1"> <icon-svg icon-class="cloud-lock" class="icon2" /> </span>
-                  <span class="peo2 den2"><input type="text" placeholder="密码" @input="oninput2"></span>
+                  <span class="peo2 den2"><input type="text" v-model="password" placeholder="密码" @input="oninput2"></span>
                    <span class="clear_icon2" @click="clear2"> 1111</span>
                   <span class="peo3 lock"></span>
               </div>
 
-              <a class="btn" >登录</a>
-
+              <a class="btn" @click="login" >登录</a>
+                <a class="logout" @click="logout">
+                    退出
+                </a>
               <div class="register">
                   <a href="#">找回密码</a>
                   <a href="#/zuce" class="reg2">注册 —></a>
@@ -56,10 +58,36 @@ import topbar from '../topbar.vue'
 export default {
   data () {
     return {
-      
+      telnum:'',
+      password:'',
+      toggle:!this.$store.state.token
     }
   },
   methods:{
+    login(){
+      if(this.telnum!=="" && this.password!=="") {
+        alert('登录成功,存储token,跳转网页');
+        this.toggle = false;
+        this.$store.commit('CHANGE_TOKEN',1);
+      }else {
+        alert('账号密码不能为空');
+      }
+      setTimeout(()=>{
+        this.$router.replace({
+          path: '/cart'
+        })
+      },1000);
+      // 登录成
+    },
+     //退出登录按钮
+    logout(){
+      alert('退出登录成功,清除token');
+      this.$store.commit('CHANGE_TOKEN',0);
+      this.toggle = true;
+      this.telnum = '';
+      this.password = '';
+
+    },
       oninput(){
           if($(".den1 input").val()!=''){
             $(".clear_icon").css("opacity","1");  
@@ -156,6 +184,13 @@ height: 100%;
     height: 90px;
     line-height: 90px;
 
+}
+.logout{
+    display: block;
+    width: 90px;
+    height: 40px;
+    color: #323232;
+    margin-top: 20px;
 }
 .register{
     width: 100%;

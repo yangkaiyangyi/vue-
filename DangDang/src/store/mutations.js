@@ -4,19 +4,17 @@ export default {
   // add(state) {
   //   state.count += 1;
   // },
-  // reduce(state) {
-  //   if(state.count>1){
-  //     state.count -= 1;
-  //   }
-  // },
-  [types.ADDACTIVITY](state, value) {
+  [types.CHANGE_TOKEN] (state, res) {
+    state.token = res
+  },
+  [types.ADDACTIVITY] (state, value) {
     state.activityList = value
   },
-  [types.ADDGOODS](state, value) {
+  [types.ADDGOODS] (state, value) {
     state.goodsList = value
   },
-  [types.PRODUCTINFO](state, value) {
+  [types.PRODUCTINFO] (state, value) {
     state.productInfo = value
-  },
+  }
 
 }

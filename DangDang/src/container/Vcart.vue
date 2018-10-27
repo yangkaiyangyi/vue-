@@ -62,6 +62,7 @@
 <script>
 import topbar from "../components/topbar.vue";
 import footbar from "../components/footbar/footbar.vue";
+
 export default {
   data() {
     return {
@@ -104,13 +105,24 @@ export default {
     remove(index){
       // $(".shopc").remove();
       // this.$store.state.carfull = true;
-      this.products.splice(index, 1);
-      this.name.splice(index,1); //从索引值index开始，删除一位
+      console.log( this.$store.state.goodsList[0]);
+    if(index==0){
+      this.name.shift();
+        this.products.shift();
+    }else{
+         console.log(index)
+      this.name.splice(index, 1);
+      this.products.splice(index,1); //从索引值index开始，删除一位
+    }
+      
     
-    if(this.name.length==0){  //判断当购物车为空时候的状态
+   
+     
+    if(this.products.length==0){  //判断当购物车为空时候的状态
       console.log(this.name.length)
         this.$store.state.carfull=true;
         console.log(666);
+      
         
       }
       console.log( this.$store.state.goodsList)
